@@ -1,0 +1,21 @@
+{
+  "name": "express_api_gateway",
+  "version": "1.0.0",
+  "description": "API gateway based on node and express.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "API",
+    "gateway",
+    "node",
+    "express"
+  ],
+  "author": "Vishal Mishra",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "http-proxy-middleware": "^2.0.6"
+  }
+}
