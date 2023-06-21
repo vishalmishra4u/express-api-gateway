@@ -1,7 +1,18 @@
+const https = require('https');
+const fs = require('fs');
 const app = require('./app');
 
-const port = 3000;
+// Load SSL/TLS certificate and key
+const sslOptions = {
+  key: fs.readFileSync('/path/to/private.key'),
+  cert: fs.readFileSync('/path/to/certificate.crt'),
+};
 
-app.listen(port, () => {
-  console.log(`App is running at port: ${port}`);
+// Create an HTTPS server
+const server = https.createServer(sslOptions, app);
+
+// Start the server
+const port = process.env.PORT || 3000;
+server.listen(port, () => {
+  logger.info(`API Gateway is running on port ${port}`);
 });
